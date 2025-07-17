@@ -1,5 +1,5 @@
 const messages = [
- "Hadi yine başladın kendini beni tatliş ilan etmeye...🙄❤️",
+ "İlk hakkınız yanlış Nisa Hanım 😅",
   "Ama dürüst oluyoduk hani 😏",
   "Hadi hadi bırak ver şu cevabı artık😅",
   "Bu kadar tatliş olup hâlâ kabul etmemen cidden pes!",
@@ -18,13 +18,10 @@ function handleNoClick() {
     if (title) title.style.display = "none";
 
     const messageDisplay = document.getElementById("message_display");
-    messageDisplay.textContent = messages[messageIndex];
+    messageDisplay.textContent = ""; // Yazıyı hemen göstermiyoruz
 
     const yesButton = document.querySelector('.yes-button');
     const noButton = document.querySelector('.no-button');
-
-    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.2}px`;
 
     const gifContainer = document.querySelector('.gif_container');
     gifContainer.innerHTML = '';
@@ -38,29 +35,28 @@ function handleNoClick() {
 
     setTimeout(() => {
         gifContainer.innerHTML = '';
+        messageDisplay.textContent = messages[messageIndex];
     }, 1300);
 
     messageIndex++;
 
-    // 10. mesajdan sonra tüm ekranı Nisa butonu kaplasın
+    // Yeni: 10. basıştan sonra sadece Nisa butonu kalsın
     if (messageIndex >= messages.length) {
         const container = document.querySelector('.container');
         container.innerHTML = `
-            <button class="yes-button" onclick="handleYesClick()" style="
-                width: 100vw;
-                height: 100vh;
-                font-size: 36px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                background-color: #ff5e91;
-                color: white;
-                border: none;
-                cursor: pointer;
-            ">
-                Nisa 😇
-            </button>
+            <div style="text-align: center; margin-top: 100px;">
+                <button class="yes-button" onclick="handleYesClick()" style="
+                    padding: 12px 24px;
+                    font-size: 20px;
+                    background-color: #ff5e91;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                ">
+                    Nisa 😇
+                </button>
+            </div>
         `;
     }
 }
