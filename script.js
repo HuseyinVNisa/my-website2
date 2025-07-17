@@ -1,5 +1,5 @@
 const messages = [
-"Hadi yine başladın kendini beni tatliş ilan etmeye...🙄❤️",
+ "Hadi yine başladın kendini beni tatliş ilan etmeye...🙄❤️",
   "Ama dürüst oluyoduk hani 😏",
   "Hadi hadi bırak ver şu cevabı artık😅",
   "Bu kadar tatliş olup hâlâ kabul etmemen cidden pes!",
@@ -14,21 +14,18 @@ const messages = [
 let messageIndex = 0;
 
 function handleNoClick() {
-    // Başlıktaki yazıyı gizle
     const title = document.getElementById("mainTitle");
     if (title) title.style.display = "none";
 
-    // Mesaj güncelle
     const messageDisplay = document.getElementById("message_display");
     messageDisplay.textContent = messages[messageIndex];
-    messageIndex = (messageIndex + 1) % messages.length;
 
-    // Nisa butonunu büyüt
     const yesButton = document.querySelector('.yes-button');
+    const noButton = document.querySelector('.no-button');
+
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.2}px`;
 
-    // GIF göster
     const gifContainer = document.querySelector('.gif_container');
     gifContainer.innerHTML = '';
 
@@ -37,16 +34,37 @@ function handleNoClick() {
     newGif.alt = 'No click GIF';
     newGif.style.width = '200px';
     newGif.style.marginTop = '10px';
-
     gifContainer.appendChild(newGif);
 
-    // GIF'i 1.3 saniyede kaldır
     setTimeout(() => {
         gifContainer.innerHTML = '';
-    }, 5000);
+    }, 1300);
+
+    messageIndex++;
+
+    // 10. mesajdan sonra tüm ekranı Nisa butonu kaplasın
+    if (messageIndex >= messages.length) {
+        const container = document.querySelector('.container');
+        container.innerHTML = `
+            <button class="yes-button" onclick="handleYesClick()" style="
+                width: 100vw;
+                height: 100vh;
+                font-size: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: #ff5e91;
+                color: white;
+                border: none;
+                cursor: pointer;
+            ">
+                Nisa 😇
+            </button>
+        `;
+    }
 }
 
 function handleYesClick() {
-    // Nisa butonuna tıklanınca müzik oynatılabilir, yönlendirme yapılabilir
     window.location.href = "yes_page.html";
 }
