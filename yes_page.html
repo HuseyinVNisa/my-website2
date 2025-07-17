@@ -5,15 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knew you would say yes!</title>
     <link rel="stylesheet" href="./yes_style.css">
+    <style>
+        /* 🎯 Animasyonlu ok */
+        .arrow-down {
+            font-size: 32px;
+            animation: bounce 1.2s infinite;
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #ff5e91;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* 🌸 Hediyeli butonun stili */
+        .gift-button {
+            padding: 12px 24px;
+            font-size: 17px;
+            background-color: #ffb3c6;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .gift-button:hover {
+            background-color: #ff94ad;
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="header_text">Kabul edeceğini biliyordumm! <br> Teşekkür Ederimm <3 </h1>
+        <h1 class="header_text">İşte buuuuuu! <br> Sonunda kabul ettin iştee  <3 </h1>
 
-        <!-- 🎁 Yeni Buton (resmin üstüne yerleştirildi) -->
+        <!-- 🎁 Yeni Buton + Animasyonlu Ok -->
         <div class="extra_button" style="margin-top: 20px; text-align: center;">
-            <button onclick="window.location.href='index1.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
-                Bu da senin küçük hediyen tatliş kiz 🎁
+            <div class="arrow-down">⬇️</div>
+            <br>
+            <button onclick="window.location.href='index1.html'" class="gift-button">
+                Küçük hediyeniz burda tatliş kiz 🎁
             </button>
         </div>
 
