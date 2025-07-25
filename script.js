@@ -6,8 +6,8 @@ const feedbackEl = document.getElementById('feedback');
 let clickedCount = 0;
 
 const segments = `
-Cevapların hiçbir doğru değil... 🙂|
-Çünkü aslında doğru cevabu yok bu sorunun.|
+Cevapların hiçbiri doğru değil... 🙂|
+Çünkü aslında doğru cevabı yok bu sorunun.|
 Çünkü seninle en mutlu olduğum an,|
 yanımda olduğun veya olmadığın her an|
 beni yanında hissettiğin her an|
