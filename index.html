@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Test?</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>NisaVHüseyin</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1 id="mainTitle">Kim daha tatliş? <br> Dürüst olmak zorunludur 😏</h1>
-        
-        <!-- Mesajlar buraya gelecek -->
-        <div id="message_display" style="margin-bottom: 15px; font-size: 18px; font-weight: 600; color: #d6336c;"></div>
 
-        <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Nisa</button>
-            <button class="no-button" onclick="handleNoClick()">Hüseyin</button>
-        </div>
-        <div class="gif_container">
-            <!-- Başlangıçta gif yok -->
-        </div>
+  <!-- Başlangıç ekranı -->
+  <div id="start-screen" class="start-screen">
+    <img src="https://media.giphy.com/media/3o6Zt8MgUuvSbkZYWc/giphy.gif" alt="Tatlı Aşk Gif" class="start-gif" />
+
+    <button id="start-btn" class="start-btn">Başla</button>
+  </div>
+
+  <!-- Quiz ekranı -->
+  <div class="quiz-container hidden">
+    <h2>Seninle en mutlu olduğum an hangisi?</h2>
+    <div id="answers">
+      <button class="answer-btn">Gözlerime ilk defa öyle baktığın an</button>
+      <button class="answer-btn">Ankarada beraber oturduğumuz zaman</button>
+      <button class="answer-btn">Otogarda seni Ankaraya uğurlarken.</button>
+      <button class="answer-btn">Otobüste habersiz seninle karşılaştığım an</button>
     </div>
-    <script src="script.js"></script>
+    <!-- Her yanlışta yukarıda gösterilecek kırmızı flash mesaj -->
+    <div id="feedback" class="feedback hidden"></div>
+  </div>
+
+  <!-- Yazı animasyon ve final resim ekranı -->
+  <div class="animation-container hidden">
+    <div id="segment" class="text-segment"></div>
+    <img id="finalImage" src="nisa.jpg" class="hidden final-image" alt="Final Image"/>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>
