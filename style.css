@@ -117,7 +117,7 @@ body {
   user-select: none;
   white-space: pre-line;
   margin: 0 auto;
-  position: absolute;
+  position: fixed; /* 🔄 Düzenlendi: absolute → fixed */
   top: 50%;
   left: 50%;
   color: #fff;
@@ -128,10 +128,6 @@ body {
   transform: translate(-50%, -50%) scale(1);
   /* Gelen yazıya hiçbir ışık efekti vermiyoruz */
 }
-
-
-
-
 
 
 /* Gizleme sınıfı */
@@ -145,7 +141,7 @@ body {
   max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  position: absolute;
+  position: fixed; /* 🔄 Düzenlendi: absolute → fixed */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
