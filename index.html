@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>NisaVHüseyin</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prensesi Bul - Pocoyo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Sayaç -->
+        <div class="counter-container" id="counterContainer">
+            <div class="counter-text">
+                <span class="counter-label">Bulunan Prenses:</span>
+                <span class="counter-number" id="counterNumber">0</span>
+                <span class="counter-total">/50</span>
+            </div>
+        </div>
 
-  <!-- Başlangıç ekranı -->
-  <div id="start-screen" class="start-screen">
-    <img src="https://media.giphy.com/media/3o6Zt8MgUuvSbkZYWc/giphy.gif" alt="Tatlı Aşk Gif" class="start-gif" />
+        <!-- Ana Buton -->
+        <div class="button-container" id="buttonContainer">
+            <button class="main-button" id="mainButton">
+                Tek ve en güzel prensesi bulmak istiyosan butona bas 50 kere 
+            </button>
+        </div>
 
-    <button id="start-btn" class="start-btn">Başla</button>
-  </div>
+        <!-- Motivasyon Mesajları -->
+        <div class="motivation-message" id="motivationMessage"></div>
 
-  <!-- Quiz ekranı -->
-  <div class="quiz-container hidden">
-    <h2>Seninle en mutlu olduğum an hangisi?</h2>
-    <div id="answers">
-      <button class="answer-btn">Gözlerime ilk defa öyle baktığın an</button>
-      <button class="answer-btn">Ankarada beraber oturduğumuz zaman</button>
-      <button class="answer-btn">Otogarda seni Ankaraya uğurlarken.</button>
-      <button class="answer-btn">Otobüste habersiz seninle karşılaştığım an</button>
+        <!-- Final Ekranı -->
+        <div class="final-screen" id="finalScreen" style="display: none;">
+            <div class="glow-effect" id="glowEffect"></div>
+            <div class="photo-frame">
+                <img src="resim1.png" alt="Prenses" class="princess-photo" id="princessPhoto">
+            </div>
+            <div class="final-text" id="finalText">
+                İşte buldun şapşik! Hemi de tek ve en tatliş prensesi.Bu gülüşün hiç eksik olmasın .
+            </div>
+            <div class="whatsapp-container">
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" class="whatsapp-button" target="_blank" id="whatsappButton">
+                    <span class="heart">❤️</span>
+                    <span class="button-text"></span>
+                </a>
+            </div>
+        </div>
     </div>
-    <!-- Her yanlışta yukarıda gösterilecek kırmızı flash mesaj -->
-    <div id="feedback" class="feedback hidden"></div>
-  </div>
 
-  <!-- Yazı animasyon ve final resim ekranı -->
-  <div class="animation-container hidden">
-    <div id="segment" class="text-segment"></div>
-    <img id="finalImage" src="nisa.jpg" class="hidden final-image" alt="Final Image"/>
-  </div>
+    <!-- Animasyon Container -->
+    <div class="animation-container" id="animationContainer"></div>
 
-<script src="script.js"></script>
+    <!-- Konfeti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
